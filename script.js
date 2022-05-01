@@ -1,3 +1,4 @@
+//Selectors
 let lists = document.querySelectorAll('.list');
 let add = document.querySelector('.add-card');
 
@@ -7,7 +8,6 @@ let closeButton = document.querySelector('.close');
 let cardSubmit = document.querySelector('.btn-save');
 
 // Events
-
 const handleAddNewCards = () => {
 
     cards = document.querySelectorAll('.card'); 
@@ -15,8 +15,6 @@ const handleAddNewCards = () => {
     cards.forEach(card => {
         registerEventOnCard(card);
     });
-
-    console.log('sds')
 }
 
 lists.forEach(list => {
@@ -102,18 +100,15 @@ function createCard(){
         card_div.classList.add('card');
         card_div.setAttribute('draggable','true');
     
-        // Criando o Título
+        //Create Title
         const card_title = document.createElement("h3");
         card_title.innerText = input_val.value;
         card_div.appendChild(card_title);
     
-        // Criando o Texto
+        //Create Text
         const card_txt = document.createElement("p");
         card_txt.innerText = text_val.value;
         card_div.appendChild(card_txt);
-
-        //console.log(card_div)
-        //console.log(cards.length)
 
         lists[listNumber].appendChild(card_div);
         handleAddNewCards();
